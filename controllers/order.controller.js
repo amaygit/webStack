@@ -3,7 +3,7 @@ import Order from "../models/order.model.js";
 import Gig from "../models/gig.model.js";
 import Stripe from "stripe";
 export const intent = async (req, res, next) => {
-  const stripe = new Stripe("sk_test_51NhEsoSARdHzA3FUKK2J9rUrfe6ZUThBq31bWnOxs8ZD43ydwvM8S69XIdLxbC3rVVDM4nBxmxy1K56FygehqiRf000DEIkp5S");
+  const stripe = new Stripe(process.env.STRIPE);
 
   const gig = await Gig.findById(req.params.id);
 
